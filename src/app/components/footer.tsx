@@ -9,7 +9,7 @@ const discosureParagraphs = [
 ];
 const Footer = () => {
   return (
-    <footer className="flex flex-col items-center justify-center mb-[30px] mx-auto w-[90%] sm:w-[75%]">
+    <footer className="flex flex-col items-center justify-center mb-[30px] mx-auto w-[90%] sm:w-[75%] pt-[25px] sm:pt-[40px]">
       <img
         src="/logo-dark.svg"
         alt="logo-dark"
