@@ -1,3 +1,5 @@
+import React from "react";
+import Carousel from "./components/carousel";
 
 const amounts = [
   "Less than $ 10,000",
@@ -11,7 +13,7 @@ const amounts = [
   "$80,000 or more",
 ];
 
-export default function Home() {
+const Home = () => {
   return (
     <div className="w-full font-[family-name:var(--font-poppins-regular)]">
       {/* Hero */}
@@ -80,7 +82,11 @@ export default function Home() {
               We’ll call you in the next few minutes to talk about your options.
             </p>
           </div>
-          <img src="/line-arrow.svg" alt="Trust Pilot" className="w-[55px] -mt-[100px]" />
+          <img
+            src="/line-arrow.svg"
+            alt="Trust Pilot"
+            className="w-[55px] -mt-[100px]"
+          />
           <div className="flex justify-center flex-col text-center gap-y-[32px] px-[32px]">
             <img
               src="/message.svg"
@@ -94,7 +100,11 @@ export default function Home() {
               We’ll call you in the next few minutes to talk about your options.
             </p>
           </div>
-          <img src="/line-arrow.svg" alt="Trust Pilot" className="w-[55px] -mt-[100px]" />
+          <img
+            src="/line-arrow.svg"
+            alt="Trust Pilot"
+            className="w-[55px] -mt-[100px]"
+          />
           <div className="flex justify-center flex-col text-center gap-y-[32px] px-[32px]">
             <img
               src="/message.svg"
@@ -114,8 +124,11 @@ export default function Home() {
       <div className="relative flex flex-col  justify-center w-full text-center bg-[url(/bg-2.png)] bg-center bg-cover pt-[145px] -mt-[50px]">
         <div className="absolute z-1 inset-0 bg-[rgba(28,61,90,0.6)] pointer-events-none"></div>
         <div className="relative z-10">
+          <Carousel />
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default Home;
