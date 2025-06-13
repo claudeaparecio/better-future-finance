@@ -1,5 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
-import Carousel from "./components/carousel";
+// import Carousel from "./components/carousel";
 
 const amounts = [
   "Less than $ 10,000",
@@ -34,19 +35,21 @@ const Home = () => {
           </p>
           <div className="my-[16px] text-white">
             <p className="font-bold">Select Your Debt Amount</p>
-            <div className="grid grid-cols-2 mt-[12px] max-w-[700px] gap-[16px] mx-auto">
+            <div className="flex flex-col px-4 sm:grid sm:grid-cols-2 mt-[12px] max-w-[700px] gap-[16px] mx-auto">
               {amounts.map((amount, i) => (
                 <div
                   key={i}
                   className={`border-2 py-2 border-white ${
                     i === amounts.length - 1 ? "col-span-2" : ""
-                  } hover:bg-primary hover:border-0`}
+                  } hover:bg-[#0093F4] hover:border-[#0093F4]`}
                 >
                   {amount}
                 </div>
               ))}
               <button className="col-span-2 bg-[#BC281D] py-2.5 uppercase">
-                Start My Application
+                <span className="font-[family-name:var(--font-poppins-bold)] tracking-[0.1em]">
+                  Start My Application
+                </span>
               </button>
             </div>
             <div className="flex justify-center my-[20px] gap-x-[70px]">
@@ -66,10 +69,10 @@ const Home = () => {
         </div>
       </div>
       {/* How it works */}
-      <div className="max-w-[1100px] mx-auto flex flex-col items-center my-[48px]">
+      <div className="w-full flex flex-col items-center my-[48px]">
         <h1 className="text-[32px] font-bold text-[#1C3D5A]"> How It Works</h1>
-        <div className="flex my-[24px]">
-          <div className="flex justify-center flex-col text-center gap-y-[32px] px-[32px] -mx-1.5">
+        <div className="flex my-[24px] flex-col gap-y-[32px] items-center sm:flex-row">
+          <div className="flex justify-center flex-col text-center gap-y-[16px] sm:gap-y-[32px] px-[32px]">
             <img
               src="/message.svg"
               alt="Trust Pilot"
@@ -85,9 +88,9 @@ const Home = () => {
           <img
             src="/line-arrow.svg"
             alt="Trust Pilot"
-            className="w-[55px] -mt-[100px]"
+            className="w-auto h-[40px] sm:w-[30px] sm:h-auto lg:w-[30px] sm:-mt-[100px] sm:rotate-270"
           />
-          <div className="flex justify-center flex-col text-center gap-y-[32px] px-[32px]">
+          <div className="flex justify-center flex-col text-center gap-y-[16px] sm:gap-y-[32px] px-[32px]">
             <img
               src="/message.svg"
               alt="Trust Pilot"
@@ -103,9 +106,9 @@ const Home = () => {
           <img
             src="/line-arrow.svg"
             alt="Trust Pilot"
-            className="w-[55px] -mt-[100px]"
+            className="w-auto h-[40px] sm:w-[30px] sm:h-auto lg:w-[30px] sm:-mt-[100px] sm:rotate-270"
           />
-          <div className="flex justify-center flex-col text-center gap-y-[32px] px-[32px]">
+          <div className="flex justify-center flex-col text-center gap-y-[16px] sm:gap-y-[32px] px-[32px]">
             <img
               src="/message.svg"
               alt="Trust Pilot"
@@ -123,9 +126,7 @@ const Home = () => {
       {/* Testimonial */}
       <div className="relative flex flex-col  justify-center w-full text-center bg-[url(/bg-2.png)] bg-center bg-cover pt-[145px] -mt-[50px]">
         <div className="absolute z-1 inset-0 bg-[rgba(28,61,90,0.6)] pointer-events-none"></div>
-        <div className="relative z-10">
-          <Carousel />
-        </div>
+        <div className="relative z-10 w-full">{/* <Carousel /> */}</div>
       </div>
     </div>
   );

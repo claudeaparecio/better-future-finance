@@ -6,7 +6,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const Carousel = () => {
+export default function SimpleSlider() {
   const settings = {
     dots: true,
     infinite: true,
@@ -36,6 +36,4 @@ const Carousel = () => {
       </div>
     </Slider>
   );
-};
-
-export default Carousel;
+}
