@@ -16,7 +16,7 @@ export default function Home() {
     <div className="w-full font-[family-name:var(--font-poppins-regular)]">
       {/* Hero */}
       <div className="relative flex flex-col  justify-center w-full text-center bg-[url(/bg.png)] bg-center bg-cover pt-[145px] -mt-[50px]">
-        <div className="absolute z-1 inset-0 bg-[rgba(28,61,90,0.6)] pointer-events-none"></div>
+        <div className="absolute z-1 inset-0 bg-[rgb(23,66,115,0.9)] pointer-events-none"></div>
         <div className="relative z-10">
           <div className="mb-[16px]">
             <h2 className="uppercase font-bold text-[32px] text-primary leading-[30px]">
