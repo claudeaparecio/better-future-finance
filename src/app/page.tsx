@@ -1,103 +1,121 @@
-import Image from "next/image";
+
+const amounts = [
+  "Less than $ 10,000",
+  "$40,000 – $49,999",
+  "$10,000 – $19,999",
+  "$50,000 – $59,999",
+  "$20,000 – $29,999",
+  "$60,000 – $69,999",
+  "$30,000 – $39,999",
+  "$70,000 – $79,999",
+  "$80,000 or more",
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="w-full font-[family-name:var(--font-poppins-regular)]">
+      {/* Hero */}
+      <div className="relative flex flex-col  justify-center w-full text-center bg-[url(/bg.png)] bg-center bg-cover pt-[145px] -mt-[50px]">
+        <div className="absolute z-1 inset-0 bg-[rgba(28,61,90,0.6)] pointer-events-none"></div>
+        <div className="relative z-10">
+          <div className="mb-[16px]">
+            <h2 className="uppercase font-bold text-[32px] text-primary leading-[30px]">
+              Your Better Financial <br /> Future Starts Here
+            </h2>
+            <p className="text-white">Stop overpaying. Start rebuilding.</p>
+          </div>
+          <p className="text-white font-bold">
+            Experienced specialists working on your behalf
+          </p>
+          <p className="text-white text-[12px]">
+            Clear your balances, rebuild your life — in as little as a year
+          </p>
+          <div className="my-[16px] text-white">
+            <p className="font-bold">Select Your Debt Amount</p>
+            <div className="grid grid-cols-2 mt-[12px] max-w-[700px] gap-[16px] mx-auto">
+              {amounts.map((amount, i) => (
+                <div
+                  key={i}
+                  className={`border-2 py-2 border-white ${
+                    i === amounts.length - 1 ? "col-span-2" : ""
+                  } hover:bg-primary hover:border-0`}
+                >
+                  {amount}
+                </div>
+              ))}
+              <button className="col-span-2 bg-[#BC281D] py-2.5 uppercase">
+                Start My Application
+              </button>
+            </div>
+            <div className="flex justify-center my-[20px] gap-x-[70px]">
+              <img
+                src="/trust-pilot.svg"
+                alt="Trust Pilot"
+                className="h-[45px] w-auto"
+              />
+              <div className="h-[50] border-l-2 border-white" />
+              <img
+                src="/google-1.svg"
+                alt="Trust Pilot"
+                className="h-[45px] w-auto"
+              />
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+      {/* How it works */}
+      <div className="max-w-[1100px] mx-auto flex flex-col items-center my-[48px]">
+        <h1 className="text-[32px] font-bold text-[#1C3D5A]"> How It Works</h1>
+        <div className="flex my-[24px]">
+          <div className="flex justify-center flex-col text-center gap-y-[32px] px-[32px] -mx-1.5">
+            <img
+              src="/message.svg"
+              alt="Trust Pilot"
+              className="h-[45px] w-auto"
+            />
+            <p className="text-[14px] leading-[14px] font-bold text-[#1C3D5A]">
+              Submit The Form For A <br></br> Free Consultation
+            </p>
+            <p className="text-[12px] leading-[14px]">
+              We’ll call you in the next few minutes to talk about your options.
+            </p>
+          </div>
+          <img src="/line-arrow.svg" alt="Trust Pilot" className="w-[55px] -mt-[100px]" />
+          <div className="flex justify-center flex-col text-center gap-y-[32px] px-[32px]">
+            <img
+              src="/message.svg"
+              alt="Trust Pilot"
+              className="h-[45px] w-auto"
+            />
+            <p className="text-[14px] leading-[14px] font-bold text-[#1C3D5A]">
+              Submit The Form For A <br></br> Free Consultation
+            </p>
+            <p className="text-[12px] leading-[14px]">
+              We’ll call you in the next few minutes to talk about your options.
+            </p>
+          </div>
+          <img src="/line-arrow.svg" alt="Trust Pilot" className="w-[55px] -mt-[100px]" />
+          <div className="flex justify-center flex-col text-center gap-y-[32px] px-[32px]">
+            <img
+              src="/message.svg"
+              alt="Trust Pilot"
+              className="h-[45px] w-auto"
+            />
+            <p className="text-[14px] leading-[14px] font-bold text-[#1C3D5A]">
+              Submit The Form For A <br></br> Free Consultation
+            </p>
+            <p className="text-[12px] leading-[14px]">
+              We’ll call you in the next few minutes to talk about your options.
+            </p>
+          </div>
+        </div>
+      </div>
+      {/* Testimonial */}
+      <div className="relative flex flex-col  justify-center w-full text-center bg-[url(/bg-2.png)] bg-center bg-cover pt-[145px] -mt-[50px]">
+        <div className="absolute z-1 inset-0 bg-[rgba(28,61,90,0.6)] pointer-events-none"></div>
+        <div className="relative z-10">
+        </div>
+      </div>
     </div>
   );
 }
